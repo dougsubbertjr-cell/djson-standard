@@ -1,0 +1,21 @@
+{
+  "djson_version": "1.0",
+  "entity": {
+    "name": "Operator's Edge",
+    "type": "Organization",
+    "url": "https://yourdomain.com",
+    "trust_layer": {
+      "verified": true,
+      "anti_scam_policy": "Strict verification and low tolerance for unauthorized distribution."
+    }
+  },
+  "products": [
+    {
+      "name": "Operator's Edge Bundle",
+      "format": ["Audiobook", "PDF", "Workbook"],
+      "platform": "Gumroad",
+      "status": "active"
+    }
+  ],
+  "last_updated": "2026-07-24"
+}
