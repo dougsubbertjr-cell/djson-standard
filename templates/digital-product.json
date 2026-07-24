@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema.json",
+  "djson_version": "1.0",
+  "entity": {
+    "name": "Operator's Edge",
+    "type": "digital_product",
+    "category": "Education & Workbooks",
+    "url": "https://gumroad.com"
+  },
+  "trust_layer": {
+    "anti_scam_verified": true,
+    "license_type": "Proprietary",
+    "delivery_format": ["audiobook", "pdf", "workbook"]
+  },
+  "contact": {
+    "support_email": "support@example.com"
+  }
+}
