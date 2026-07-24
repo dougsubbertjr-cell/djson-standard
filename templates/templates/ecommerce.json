@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema.json",
+  "djson_version": "1.0",
+  "entity": {
+    "name": "Brand Store",
+    "type": "e_commerce",
+    "category": "Retail",
+    "url": "https://example.com"
+  },
+  "trust_layer": {
+    "anti_scam_verified": true,
+    "return_policy_url": "https://example.com/returns"
+  },
+  "contact": {
+    "support_email": "orders@example.com",
+    "location": "United States"
+  }
+}
