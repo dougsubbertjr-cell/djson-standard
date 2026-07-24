@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DJSON Standard Schema",
+  "type": "object",
+  "properties": {
+    "djson_version": {
+      "type": "string",
+      "example": "1.0"
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      },
+      "required": ["name", "type"]
+    }
+  },
+  "required": ["djson_version", "entity"]
+}
