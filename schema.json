@@ -1,21 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "DJSON Standard Schema",
-  "type": "object",
-  "properties": {
-    "djson_version": {
-      "type": "string",
-      "example": "1.0"
-    },
-    "entity": {
-      "type": "object",
-      "properties": {
-        "name": { "type": "string" },
-        "type": { "type": "string" },
-        "url": { "type": "string", "format": "uri" }
-      },
-      "required": ["name", "type"]
-    }
-  },
-  "required": ["djson_version", "entity"]
+  "$id": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema.json",
+  "title": "DJSON v0.1.0 Compatibility Alias",
+  "description": "Compatibility entry point for existing integrations. This file defines no independent DJSON contract; it delegates entirely to the canonical v0.1.0 schema at schema/djson-v0.1.schema.json. New integrations should reference the canonical schema URL directly.",
+  "$ref": "./schema/djson-v0.1.schema.json"
 }

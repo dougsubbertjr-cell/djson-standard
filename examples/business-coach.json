@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema/djson-v0.1.schema.json",
+  "djson_version": "0.1.0",
+  "entity": {
+    "name": "Avery Rowan Business Coaching",
+    "type": "individual",
+    "category": "Business coaching",
+    "description": "A fictional independent coaching practice for early-stage service-business owners.",
+    "url": "https://averyrowancoaching.example"
+  },
+  "trust_layer": {
+    "verified": true,
+    "verification_method": "The fictional practice confirms the booking-domain and support-email configuration before publishing this record.",
+    "anti_scam_policy": "Avery Rowan Business Coaching schedules sessions only through its listed booking page and does not solicit payments through social-media messages."
+  },
+  "offerings": [
+    {
+      "name": "Clarity Sprint",
+      "type": "consultation",
+      "status": "active",
+      "description": "A fictional 90-minute online session focused on service positioning and next-step planning.",
+      "url": "https://averyrowancoaching.example/clarity-sprint",
+      "delivery_format": [
+        "video_call"
+      ],
+      "price": 240,
+      "currency": "USD"
+    }
+  ],
+  "contact": {
+    "support_email": "hello@averyrowancoaching.example",
+    "url": "https://averyrowancoaching.example/contact"
+  },
+  "last_updated": "2026-09-19T12:00:00Z"
+}
