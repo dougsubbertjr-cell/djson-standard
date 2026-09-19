@@ -1,18 +1,32 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema.json",
-  "djson_version": "1.0",
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema/djson-v0.1.schema.json",
+  "djson_version": "0.1.0",
   "entity": {
-    "name": "Brand Store",
-    "type": "e_commerce",
+    "name": "Example Storefront",
+    "type": "business",
     "category": "Retail",
-    "url": "https://example.com"
+    "url": "https://example-storefront.example"
   },
   "trust_layer": {
-    "anti_scam_verified": true,
-    "return_policy_url": "https://example.com/returns"
+    "verified": false,
+    "anti_scam_policy": "Replace this statement with a factual policy before publishing.",
+    "policy_urls": [
+      "https://example-storefront.example/returns"
+    ]
   },
+  "offerings": [
+    {
+      "name": "Example Store Item",
+      "type": "product",
+      "status": "active",
+      "delivery_format": [
+        "shipping"
+      ]
+    }
+  ],
   "contact": {
-    "support_email": "orders@example.com",
-    "location": "United States"
-  }
+    "support_email": "orders@example-storefront.example",
+    "location": "Example location"
+  },
+  "last_updated": "2026-09-19T12:00:00Z"
 }

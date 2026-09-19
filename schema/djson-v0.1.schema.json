@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema/djson-v0.1.schema.json",
+  "title": "DJSON v0.1.0 Schema",
+  "description": "Canonical schema for a self-declared Digital JSON (DJSON) document. DJSON trust fields are assertions supplied by the publisher and do not, by themselves, establish identity, legitimacy, or safety.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "djson_version",
+    "entity",
+    "last_updated"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Optional identifier for the schema used to author this document."
+    },
+    "djson_version": {
+      "const": "0.1.0",
+      "description": "The DJSON specification version implemented by this document."
+    },
+    "entity": {
+      "$ref": "#/$defs/entity"
+    },
+    "trust_layer": {
+      "$ref": "#/$defs/trustLayer"
+    },
+    "offerings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/offering"
+      },
+      "description": "Products or services that the entity currently presents."
+    },
+    "contact": {
+      "$ref": "#/$defs/contact"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time at which the publisher last reviewed this document, in ISO 8601 date-time form."
+    }
+  },
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Publisher-facing name of the organization, person, or brand."
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Entity classification selected by the publisher, such as organization, business, or individual."
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "Optional market or service category."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Brief publisher-supplied description of the entity."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical public URL controlled by or representing the entity."
+        }
+      }
+    },
+    "trustLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verified"
+      ],
+      "properties": {
+        "verified": {
+          "type": "boolean",
+          "description": "A self-declared assertion that the publisher has completed its stated verification process."
+        },
+        "verification_method": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "description": "Optional description of the publisher's verification method."
+        },
+        "anti_scam_policy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "Optional publisher policy for preventing impersonation, fraud, or unauthorized distribution."
+        },
+        "policy_urls": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Optional public URLs where relevant policies are published."
+        }
+      }
+    },
+    "offering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "status"
+      ],
+      "dependentRequired": {
+        "price": [
+          "currency"
+        ],
+        "currency": [
+          "price"
+        ]
+      },
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Publisher-selected category, such as product, service, consultation, or course."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "inactive",
+            "coming_soon",
+            "discontinued"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "delivery_format": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "Optional delivery formats, for example in_person, digital_download, or shipping."
+        },
+        "price": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Optional advertised price, expressed in the adjacent ISO 4217 currency."
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO 4217 currency code required when price is supplied."
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "support_email": {
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "telephone": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "minProperties": 1,
+      "description": "Public channels the publisher makes available for contact."
+    }
+  }
+}

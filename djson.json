@@ -1,21 +1,33 @@
 {
-  "djson_version": "1.0",
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema/djson-v0.1.schema.json",
+  "djson_version": "0.1.0",
   "entity": {
-    "name": "Operator's Edge",
-    "type": "Organization",
-    "url": "https://yourdomain.com",
-    "trust_layer": {
-      "verified": true,
-      "anti_scam_policy": "Strict verification and low tolerance for unauthorized distribution."
-    }
+    "name": "Fable Peak Learning",
+    "type": "business",
+    "category": "Digital education",
+    "description": "A fictional publisher of practical learning materials.",
+    "url": "https://fable-peak-learning.example"
   },
-  "products": [
+  "trust_layer": {
+    "verified": false,
+    "anti_scam_policy": "Fable Peak Learning sells fictional materials only through its listed website."
+  },
+  "offerings": [
     {
-      "name": "Operator's Edge Bundle",
-      "format": ["Audiobook", "PDF", "Workbook"],
-      "platform": "Gumroad",
-      "status": "active"
+      "name": "Planning Field Notes",
+      "type": "digital_product",
+      "status": "active",
+      "description": "A fictional downloadable workbook for planning routines.",
+      "url": "https://fable-peak-learning.example/products/planning-field-notes",
+      "delivery_format": [
+        "digital_download"
+      ],
+      "price": 18,
+      "currency": "USD"
     }
   ],
-  "last_updated": "2026-07-24"
+  "contact": {
+    "support_email": "support@fable-peak-learning.example"
+  },
+  "last_updated": "2026-09-19T12:00:00Z"
 }

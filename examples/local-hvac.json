@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dougsubbertjr-cell/djson-standard/main/schema/djson-v0.1.schema.json",
+  "djson_version": "0.1.0",
+  "entity": {
+    "name": "Northline Heating & Air",
+    "type": "business",
+    "category": "Local HVAC service",
+    "description": "A fictional neighborhood heating and cooling maintenance company.",
+    "url": "https://northline-hvac.example"
+  },
+  "trust_layer": {
+    "verified": false,
+    "anti_scam_policy": "Northline Heating & Air provides written estimates from its published domain before beginning any fictional service visit.",
+    "policy_urls": [
+      "https://northline-hvac.example/customer-policy"
+    ]
+  },
+  "offerings": [
+    {
+      "name": "Seasonal System Tune-Up",
+      "type": "service",
+      "status": "active",
+      "description": "A fictional scheduled inspection of a residential heating or cooling system.",
+      "url": "https://northline-hvac.example/services/seasonal-tune-up",
+      "delivery_format": [
+        "in_person"
+      ],
+      "price": 119,
+      "currency": "USD"
+    }
+  ],
+  "contact": {
+    "support_email": "service@northline-hvac.example",
+    "telephone": "+1-555-010-2846",
+    "location": "Fictional Northline, USA"
+  },
+  "last_updated": "2026-09-19T12:00:00Z"
+}
